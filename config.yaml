@@ -1,0 +1,43 @@
+board: ESP32
+name: Plotter_UTM_V4_Final_Performance
+
+stepping:
+  engine: RMT
+  idle_ms: 255
+
+axes:
+  x:
+    steps_per_mm: 174.147
+    max_rate_mm_per_min: 500.000
+    acceleration_mm_per_sec2: 20.000
+    max_travel_mm: 35.000
+    motor0:
+      stepstick:
+        step_pin: gpio.14
+        direction_pin: gpio.12
+  y:
+    steps_per_mm: 174.147
+    max_rate_mm_per_min: 500.000
+    acceleration_mm_per_sec2: 20.000
+    max_travel_mm: 35.000
+    motor0:
+      stepstick:
+        step_pin: gpio.26
+        direction_pin: gpio.27
+  z:
+    steps_per_mm: 100.000
+    max_rate_mm_per_min: 1500.000
+    acceleration_mm_per_sec2: 500.000
+    max_travel_mm: 5.000
+    homing:
+      cycle: 0
+    motor0:
+      rc_servo:
+        output_pin: gpio.18
+        pwm_hz: 50
+        min_pulse_us: 1080
+        max_pulse_us: 1350
+        
+coolant:
+  flood_pin: gpio.23
+  delay_ms: 0
